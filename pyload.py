@@ -52,10 +52,14 @@ if __name__ == '__main__':
     pool.close()
     pool.join()
 
+    # wait until all docs are accounted for, then stop the clock
+    total = 0
+    while total != args.number:
+        total = sum( c.count() for c in coll )
+        time.sleep(0.1)
+
     d = time.time() - t
     print "inserted %i docs into %i collections with %i threads in %f seconds = %f docs/sec" % (args.number, args.round_robin, args.threads, d, args.number/d)
 
-    time.sleep(1)
-    total = sum( c.count() for c in coll )
-    print "counts on MongoDB report %i documents total." % total
+    # print "counts on MongoDB report %i documents total." % total
 

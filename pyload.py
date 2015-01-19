@@ -56,6 +56,7 @@ if __name__ == '__main__':
     total = 0
     while total != args.number:
         total = sum( c.count() for c in coll )
+        print "expecting %i docs, counting %i docs" % (args.number, total)
         time.sleep(0.1)
 
     d = time.time() - t

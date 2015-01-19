@@ -6,7 +6,7 @@ This script bulk inserts empty documents into MongoDB to test its concurrency li
 
 All configurable options have reasonable default values. Run with:
 ```
-python pload.py
+python pyload.py
 ```
 
 `--number` the number of total documents to insert. <br>

@@ -6,7 +6,7 @@ import time
 
 def worker(number):
     """ bulk insert via generator into the collection. """
-    coll[number].insert( ({} for i in xrange(batchsize)), manipulate=False )
+    coll[number].insert( ({} for i in xrange(args.batchsize)), manipulate=False )
 
 
 if __name__ == '__main__':
@@ -26,14 +26,6 @@ if __name__ == '__main__':
     parser.add_argument('--threads', metavar='T', default=numcores, type=int, help='number of simultaneous threads [default: #cores = %i]' % numcores)
 
     print "using pymongo version %s" % pymongo.version
-
-    # variables
-    number = 10000000
-    batchsize = 1000
-    port = 27017
-    database = "test"
-    coll_prefix = "coll"
-    num_collections = 10
 
     args = parser.parse_args()
         

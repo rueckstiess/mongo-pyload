@@ -1,7 +1,6 @@
 # mongo-pyload
 
-
-This script bulk inserts empty documents into MongoDB to test the concurrency limits of MongoDB.
+This script bulk inserts empty documents into MongoDB to test its concurrency limits.
 
 ### Usage and Options
 
@@ -17,6 +16,6 @@ python pload.py
 `--host` host where MongoDB is located <br>
 `--port` port to connect to <br>
 `--write-concern` the write concern to use. (default: `0`, which is `{w: 0}`) <br>
-`--round-robin` the number of collections to write to in round-robin fashion (default: `10`)
-`--threads` the number of threads (actually, processes) to run simultaneously (default: `#cores`)
+`--round-robin` the number of collections to write to in round-robin fashion (default: `10`) <br>
+`--threads` the number of threads (actually, processes) to run simultaneously (default: `#cores`) <br>
 
